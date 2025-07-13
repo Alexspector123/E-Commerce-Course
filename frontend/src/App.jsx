@@ -2,6 +2,7 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 
 import RootLayout from "./layout/RootLayout";
 import HomePage from './pages/HomePage';
+import AuthPage from './pages/authpage/AuthPage';
 
 import './App.css'
 
@@ -10,6 +11,7 @@ const router = createBrowserRouter(
     <>
     <Route path='/' element={<RootLayout />}>
       <Route index element={<HomePage />} />
+      <Route path='auth' element={<AuthPage />}/>
     </Route>
     </>
   )
