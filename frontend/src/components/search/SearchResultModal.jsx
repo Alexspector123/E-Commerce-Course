@@ -9,7 +9,7 @@ const SearchResultModal = ({ results, isInput, modalRef }) => {
         className="absolute
                         top-16 md:top-full right-0 left-0 md:right-auto md:left-auto
                         mt-2
-                        bg-white z-50 
+                        bg-white z-50
                         w-full max-h-[90vh]
                         overflow-y-auto
                         rounded-b-lg

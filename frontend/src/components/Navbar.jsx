@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Name from './Name';
 
@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
     const navigate = useNavigate();
     
+    const [isOpenSearchMobile, setIsOpenSearchMobile] = useState(false);
+
     return (
         <div className='absolute
                     w-full'>
@@ -15,7 +17,7 @@ const Navbar = () => {
                         px-10 py-5
                         flex justify-between
                         '>
-                <div className='flex'>
+                <div className='flex justify-between w-full md:w-auto md:justify-normal'>
                     <div className='mr-4'>
                         <Name />
                     </div>
@@ -23,9 +25,9 @@ const Navbar = () => {
                         <SearchInput />
                     </div>
                 </div>
-                <div>
+                <div className='hidden lg:block'>
                     <button onClick={() => navigate('/auth')}
-                            className=' hidden lg:inline
+                            className='
                                     text-base font-medium text-green-400 hover:text-white
                                     border-2 rounded-md
                                     hover:bg-green-400 active:bg-green-700
