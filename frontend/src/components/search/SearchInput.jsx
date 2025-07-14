@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 
 import SearchResultModal from './SearchResultModal';
 
-import CourseData from '../../data/courseData.js';
+import CourseData from '../../data/CourseData';
 
 const SearchInput = () => {
 
