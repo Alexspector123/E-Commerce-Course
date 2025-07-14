@@ -1,19 +1,41 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import debounce from 'lodash.debounce';
 
 import { CiSearch } from "react-icons/ci";
 
 import SearchResultModal from './SearchResultModal';
+
+import CourseData from '../../data/courseData.js';
 
 const SearchInput = () => {
 
     const [search, setSearch] = useState("")
     const [isFocused, setIsFocused] = useState(false);
     const [results, setResults] = useState({ course: [] });
-
     const [showModal, setShowModal] = useState(false);
 
     const location = useLocation();
+
+    const modalRef = useRef(null);
+    const containerRefMobile = useRef(null);
+
+    const navigate = useNavigate();
+
+    {/* Fetch data from input search */ }
+    const fetchDropdownOptions = (value) => {
+        if (!value) {
+            setResults({ course: [] });
+            return;
+        }
+
+        const filtered = CourseData.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()));
+        setResults({ course: filtered });
+    };
+    const debounceDropDown = useCallback(
+        debounce((nextValue) => fetchDropdownOptions(nextValue), 800),
+        []
+    );
 
     const handleInputOnchange = (e) => {
         const { value } = e.target;
@@ -21,9 +43,16 @@ const SearchInput = () => {
         debounceDropDown(value);
     }
 
-    const modalRef = useRef(null);
-    const containerRefMobile = useRef(null);
+    // Handle Enter key press to navigate to search results
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' && search.trim()) {
+            const encoded = encodeURIComponent(search.trim());
+            navigate(`/courses/search/?q=${encoded}`);
+            setIsFocused(false); 
+        }
+    };
 
+    // Search result modal for desktop
     useEffect(() => {
         const handleClickOutsideDesktop = (e) => {
             if (modalRef.current && !modalRef.current.contains(e.target)) {
@@ -37,6 +66,8 @@ const SearchInput = () => {
             document.removeEventListener("mousedown", handleClickOutsideDesktop);
         };
     }, []);
+
+    // Search result modal for mobile
     useEffect(() => {
         if (!showModal) return;
 
@@ -52,6 +83,7 @@ const SearchInput = () => {
         };
     }, [showModal]);
 
+    // Reset search input when navigating to a new page
     useEffect(() => {
         setIsFocused(false);
     }, [location]);
@@ -63,20 +95,21 @@ const SearchInput = () => {
                     type="text"
                     value={search}
                     onChange={handleInputOnchange}
+                    onKeyDown={handleKeyDown}
                     placeholder="Search..."
                     onFocus={() => setIsFocused(true)}
                     className="transition-all duration-200 ease-in-out
-                        md:w-72 h-8
+                        md:w-110 h-10
+                        text-sm
                         bg-slate-100
-                        px-4 py-1
-                        text-[17px]
-                        rounded-lg
-                        focus:outline-none focus:ring-2 focus:ring-green-500
-                        
+                        px-3 py-1
+                        rounded-xl
+                        border
+                        focus:outline-none focus:border-green-500 focus:border-2
                         relative"
                 />
                 {isFocused && <SearchResultModal modalRef={modalRef} results={results} isInput={search.trim() !== "" ? true : false} />}
-                <CiSearch className="absolute top-1.5 right-3 transition-all duration-200 ease-in-out
+                <CiSearch className="absolute top-2.5 right-3 transition-all duration-200 ease-in-out
                                     text-xl cursor-pointer" />
             </div>
 

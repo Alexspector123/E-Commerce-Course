@@ -7,14 +7,14 @@ const SearchResultModal = ({ results, isInput, modalRef }) => {
       <div
         ref={modalRef}
         className="absolute
-                        top-16 md:top-full right-0 left-0 md:right-auto md:left-auto
-                        mt-2
-                        bg-white z-50
-                        w-full max-h-[90vh]
-                        overflow-y-auto
-                        rounded-b-lg
-                        shadow-lg
-                        p-4 pb-8">
+                   top-16 md:top-full right-0 left-0 md:right-auto md:left-auto
+                   mt-2
+                   bg-white z-50
+                   w-full max-h-[90vh]
+                   overflow-y-auto
+                   rounded-b-lg
+                   shadow-lg
+                   p-4">
         {isInput ? (
           <div>
             {/*Course search*/}
@@ -26,7 +26,7 @@ const SearchResultModal = ({ results, isInput, modalRef }) => {
 
                   <div className='flex flex-col gap-3'>
                     {results.course.slice(0, 5).map((course) => (
-                      <SearchCourseItem data={course} />
+                      <SearchCourseItem id={course.id} data={course} />
                     ))}
                   </div>
                 </div>

@@ -10,7 +10,7 @@ const RootLayout = () => {
                     flex flex-col overflow-hidden'>
       <div className='h-full w-full'>
         <Navbar />
-        <div className='pt-20
+        <div className='
                         flex-grow'>
           <Outlet />
         </div>

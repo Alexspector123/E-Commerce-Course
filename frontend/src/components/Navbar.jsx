@@ -12,8 +12,8 @@ const Navbar = () => {
     const [isOpenSearchMobile, setIsOpenSearchMobile] = useState(false);
 
     return (
-        <div className='absolute
-                    w-full'>
+        <div className='
+                        w-full'>
             <div className='w-full
                         px-10 py-5
                         flex justify-between
