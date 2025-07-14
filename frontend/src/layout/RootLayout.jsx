@@ -7,11 +7,11 @@ import Footer from '../components/Footer'
 const RootLayout = () => {
   return (
     <div className='min-h-screen
-                    flex overflow-hidden'>
+                    flex flex-col overflow-hidden'>
       <div className='h-full w-full'>
         <Navbar />
-        <div className='px-8 pt-17
-                        h-screen'>
+        <div className='pt-20
+                        flex-grow'>
           <Outlet />
         </div>
         <Footer />

@@ -3,11 +3,12 @@ import React, { useState } from 'react'
 import Name from './Name';
 
 import SearchInput from './search/SearchInput';
+import { FiShoppingBag } from "react-icons/fi";
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const navigate = useNavigate();
-    
+
     const [isOpenSearchMobile, setIsOpenSearchMobile] = useState(false);
 
     return (
@@ -25,8 +26,9 @@ const Navbar = () => {
                         <SearchInput />
                     </div>
                 </div>
-                <div className='hidden lg:block'>
-                    <button onClick={() => navigate('/auth')}
+                <div className='flex flex-row items-center gap-4'>
+                    <div className='hidden lg:block'>
+                        <button onClick={() => navigate('/auth')}
                             className='
                                     text-base font-medium text-green-400 hover:text-white
                                     border-2 rounded-md
@@ -34,9 +36,14 @@ const Navbar = () => {
                                     px-4 py-1.5
                                     cursor-pointer
                                     transition duration-400'>
-                        Log in
-                    </button>
+                            Log in
+                        </button>
+                    </div>
+                    <div>
+                        <FiShoppingBag className='text-2xl'/>
+                    </div>
                 </div>
+
             </div>
         </div>
     )
