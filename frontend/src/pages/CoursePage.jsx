@@ -45,9 +45,7 @@ const CoursePage = () => {
             <main className="mx-auto 
                              px-4 sm:px-6 lg:px-8 py-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Main Course Info */}
                     <div className="lg:col-span-2 space-y-6">
-                        {/* Course Header */}
                         <div className="bg-white">
                             <div className="flex flex-col sm:flex-row gap-6">
                                 <div className="flex-shrink-0">
@@ -111,7 +109,6 @@ const CoursePage = () => {
                             </div>
                         </div>
 
-                        {/* Course Features */}
                         <div className="bg-white rounded-xl p-6 border border-gray-300">
                             <h2 className="text-xl font-bold text-gray-900 mb-4">What You'll Get</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -134,7 +131,6 @@ const CoursePage = () => {
                             </div>
                         </div>
 
-                        {/* Description */}
                         <div className="bg-white rounded-xl p-6">
                             <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
                             <p className="text-gray-700 leading-relaxed">
@@ -143,7 +139,6 @@ const CoursePage = () => {
                         </div>
                     </div>
 
-                    {/* Sidebar */}
                     <div className="lg:col-span-1">
                         <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200 sticky top-8">
                             <div className="mb-6">

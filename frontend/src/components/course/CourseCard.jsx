@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { FaRegStar } from "react-icons/fa";
 import { GrGroup } from "react-icons/gr";
 import { FaRegClock } from "react-icons/fa6";
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
 
-const CourseCard = ( {course} ) => {
+const CourseCard = ({ course }) => {
     const { id, image, level, rating, title, instructor, students, duration } = course;
     return (
         <div key={id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
@@ -20,9 +21,14 @@ const CourseCard = ( {course} ) => {
                     <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
                         {level}
                     </span>
-                    <div className="flex items-center">
-                        <FaRegStar className="w-4 h-4 text-yellow-400 fill-current" />
-                        <span className="text-sm text-gray-600 ml-1">{rating}</span>
+                    <div className='flex items-center gap-2'>
+                        <div>
+                            <FaRegHeart className="w-4 h-4 text-red-400" />
+                        </div>
+                        <div className="flex items-center">
+                            <FaRegStar className="w-4 h-4 text-yellow-400 fill-current" />
+                            <span className="text-sm text-gray-600 ml-1">{rating}</span>
+                        </div>
                     </div>
                 </div>
                 <div className='line-clamp-2 h-13'>
@@ -44,7 +50,7 @@ const CourseCard = ( {course} ) => {
                         <span className="text-xl font-bold text-gray-900">${course.price}</span>
                         <span className="text-sm text-gray-500 line-through ml-2">${course.originalPrice}</span>
                     </div>
-                    <Link 
+                    <Link
                         to={`/courses/${id}`}
                         className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition text-sm">
                         Enroll Now

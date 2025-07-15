@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import AuthPage from './pages/authpage/AuthPage';
 import CategoryPage from "./pages/CategoryPage";
 import CoursePage from "./pages/CoursePage";
+import ProfilePage from "./pages/ProfilePage";
 
 import './App.css'
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
         <Route path="search" element={<CategoryPage />} />
         <Route path=":id" element={<CoursePage />} />
       </Route>
+      <Route path="profile/edit" element={<ProfilePage />}/>
     </Route>
     </>
   )

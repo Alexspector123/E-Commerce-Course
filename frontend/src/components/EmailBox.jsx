@@ -3,7 +3,7 @@ import React from 'react'
 const EmailBox = () => {
     return (
         <div>
-            <section className="relative bg-gradient-to-r from-green-700 to-green-500 text-white py-16">
+            <div className="relative bg-gradient-to-r from-green-700 to-green-500 text-white py-16">
                 <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-4xl font-bold mb-4">Ready to Start Learning?</h2>
@@ -26,7 +26,7 @@ const EmailBox = () => {
                         </button>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     )
 }
