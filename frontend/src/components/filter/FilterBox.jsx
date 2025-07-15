@@ -3,7 +3,6 @@ import React from 'react'
 import { FaRegStar } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa6";
 import { AiOutlineGlobal } from "react-icons/ai";
-import { FaChartBar } from "react-icons/fa";
 
 import FilterSection from './FilterSection';
 

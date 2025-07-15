@@ -13,6 +13,8 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn react for beginners with practical examples, projects, and expert guidance.",
+    lesson: 24,
+    lastUpdated: "2025-02-02"
   },
   {
     id: 2,
@@ -28,6 +30,8 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn mastering data structures & algorithms with practical examples, projects, and expert guidance.",
+    lesson: 106,
+    lastUpdated: "2024-10-23"
   },
   {
     id: 3,
@@ -43,6 +47,8 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn digital marketing bootcamp with practical examples, projects, and expert guidance.",
+    lesson: 42,
+    lastUpdated: "2025-05-26"
   },
   {
     id: 4,
@@ -58,6 +64,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn advanced python programming with practical examples, projects, and expert guidance.",
+    lesson: 114,
+    lastUpdated: "2024-09-25",
+    downloadableResources: 45
   },
   {
     id: 5,
@@ -73,6 +82,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn graphic design masterclass with practical examples, projects, and expert guidance.",
+    lesson: 46,
+    lastUpdated: "2024-08-01",
+    downloadableResources: 54
   },
   {
     id: 6,
@@ -88,6 +100,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn complete ios app development with swift with practical examples, projects, and expert guidance.",
+    lesson: 33,
+    lastUpdated: "2025-03-26",
+    downloadableResources: 40
   },
   {
     id: 7,
@@ -103,6 +118,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn the ultimate drawing course with practical examples, projects, and expert guidance.",
+    lesson: 65,
+    lastUpdated: "2025-01-30",
+    downloadableResources: 45
   },
   {
     id: 8,
@@ -118,6 +136,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn sql & database design with practical examples, projects, and expert guidance.",
+    lesson: 35,
+    lastUpdated: "2024-11-23",
+    downloadableResources: 36
   },
   {
     id: 9,
@@ -133,6 +154,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn full-stack web development with mern with practical examples, projects, and expert guidance.",
+    lesson: 32,
+    lastUpdated: "2025-04-29",
+    downloadableResources: 35
   },
   {
     id: 10,
@@ -148,6 +172,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn business analytics with excel with practical examples, projects, and expert guidance.",
+    lesson: 12,
+    lastUpdated: "2024-11-19",
+    downloadableResources: 70
   },
   {
     id: 11,
@@ -163,6 +190,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn learn ethical hacking from scratch with practical examples, projects, and expert guidance.",
+    lesson: 33,
+    lastUpdated: "2025-01-13",
+    downloadableResources: 40
   },
   {
     id: 12,
@@ -178,6 +208,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn photography masterclass: a complete guide with practical examples, projects, and expert guidance.",
+    lesson: 54,
+    lastUpdated: "2025-02-27",
+    downloadableResources: 48
   },
   {
     id: 13,
@@ -193,6 +226,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn ui/ux design with figma with practical examples, projects, and expert guidance.",
+    lesson: 22,
+    lastUpdated: "2024-09-17",
+    downloadableResources: 37
   },
   {
     id: 14,
@@ -208,6 +244,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn kubernetes for developers with practical examples, projects, and expert guidance.",
+    lesson: 112,
+    lastUpdated: "2025-04-04",
+    downloadableResources: 45
   },
   {
     id: 15,
@@ -223,6 +262,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn machine learning a-z with practical examples, projects, and expert guidance.",
+    lesson: 43,
+    lastUpdated: "2025-03-16",
+    downloadableResources: 48
   },
   {
     id: 16,
@@ -238,6 +280,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn mindfulness & meditation with practical examples, projects, and expert guidance.",
+    lesson: 66,
+    lastUpdated: "2025-03-14",
+    downloadableResources: 35
   },
   {
     id: 17,
@@ -253,6 +298,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn docker & containers for devops with practical examples, projects, and expert guidance.",
+    lesson: 106,
+    lastUpdated: "2025-02-09",
+    downloadableResources: 50
   },
   {
     id: 18,
@@ -268,6 +316,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn public speaking mastery with practical examples, projects, and expert guidance.",
+    lesson: 78,
+    lastUpdated: "2025-06-23",
+    downloadableResources: 50
   },
   {
     id: 19,
@@ -283,6 +334,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn english grammar bootcamp with practical examples, projects, and expert guidance.",
+    lesson: 94,
+    lastUpdated: "2024-10-17",
+    downloadableResources: 70
   },
   {
     id: 20,
@@ -298,6 +352,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn illustrator cc: beginner to advanced with practical examples, projects, and expert guidance.",
+    lesson: 113,
+    lastUpdated: "2024-11-04",
+    downloadableResources: 65
   },
   {
     id: 21,
@@ -313,6 +370,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn aws certified solutions architect with practical examples, projects, and expert guidance.",
+    lesson: 32,
+    lastUpdated: "2025-01-09",
+    downloadableResources: 60
   },
   {
     id: 22,
@@ -328,6 +388,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn financial modeling for beginners with practical examples, projects, and expert guidance.",
+    lesson: 57,
+    lastUpdated: "2024-11-05",
+    downloadableResources: 50
   },
   {
     id: 23,
@@ -343,6 +406,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn google ads & seo fundamentals with practical examples, projects, and expert guidance.",
+    lesson: 99,
+    lastUpdated: "2024-08-15",
+    downloadableResources: 45
   },
   {
     id: 24,
@@ -358,6 +424,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn 3d modeling in blender with practical examples, projects, and expert guidance.",
+    lesson: 72,
+    lastUpdated: "2024-12-17",
+    downloadableResources: 70
   },
   {
     id: 25,
@@ -373,6 +442,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn career development masterclass with practical examples, projects, and expert guidance.",
+    lesson: 12,
+    lastUpdated: "2024-08-20",
+    downloadableResources: 70
   },
   {
     id: 26,
@@ -388,6 +460,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn cybersecurity basics with practical examples, projects, and expert guidance.",
+    lesson: 120,
+    lastUpdated: "2024-09-29",
+    downloadableResources: 65
   },
   {
     id: 27,
@@ -403,6 +478,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn cooking fundamentals with practical examples, projects, and expert guidance.",
+    lesson: 88,
+    lastUpdated: "2025-06-24",
+    downloadableResources: 67
   },
   {
     id: 28,
@@ -418,6 +496,9 @@ const courseData = [
     image: "",
     language: "Vietnamese",
     description: "Learn introduction to java programming with practical examples, projects, and expert guidance.",
+    lesson: 41,
+    lastUpdated: "2025-02-26",
+    downloadableResources: 88
   },
   {
     id: 29,
@@ -433,6 +514,9 @@ const courseData = [
     image: "",
     language: "Japanese",
     description: "Learn learn japanese for beginners with practical examples, projects, and expert guidance.",
+    lesson: 15,
+    lastUpdated: "2024-12-21",
+    downloadableResources: 80
   },
   {
     id: 30,
@@ -448,8 +532,11 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn chatgpt & ai tools for productivity with practical examples, projects, and expert guidance.",
+    lesson: 62,
+    lastUpdated: "2024-12-04",
+    downloadableResources: 75
   },
-   {
+  {
     id: 31,
     title: "Introduction to Blockchain",
     instructor: "Alex Morgan",
@@ -463,6 +550,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn introduction to blockchain with practical examples, projects, and expert guidance.",
+    lesson: 100,
+    lastUpdated: "2025-05-30",
+    downloadableResources: 90
   },
   {
     id: 32,
@@ -478,6 +568,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn yoga for beginners with practical examples, projects, and expert guidance.",
+    lesson: 118,
+    lastUpdated: "2024-09-29",
+    downloadableResources: 50
   },
   {
     id: 33,
@@ -493,6 +586,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn the art of negotiation with practical examples, projects, and expert guidance.",
+    lesson: 77,
+    lastUpdated: "2025-01-09",
+    downloadableResources: 40
   },
   {
     id: 34,
@@ -508,6 +604,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn unity game development with practical examples, projects, and expert guidance.",
+    lesson: 52,
+    lastUpdated: "2025-04-12",
+    downloadableResources: 90
   },
   {
     id: 35,
@@ -523,6 +622,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn introduction to philosophy with practical examples, projects, and expert guidance.",
+    lesson: 96,
+    lastUpdated: "2024-09-24",
+    downloadableResources: 110
   },
   {
     id: 36,
@@ -538,6 +640,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn cryptocurrency investment 101 with practical examples, projects, and expert guidance.",
+    lesson: 107,
+    lastUpdated: "2025-04-02",
+    downloadableResources: 60
   },
   {
     id: 37,
@@ -553,6 +658,9 @@ const courseData = [
     image: "",
     language: "Vietnamese",
     description: "Learn building restful apis with node.js with practical examples, projects, and expert guidance.",
+    lesson: 115,
+    lastUpdated: "2025-04-04",
+    downloadableResources: 65
   },
   {
     id: 38,
@@ -568,6 +676,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn adobe premiere pro for beginners with practical examples, projects, and expert guidance.",
+    lesson: 108,
+    lastUpdated: "2024-12-08",
+    downloadableResources: 90
   },
   {
     id: 39,
@@ -583,6 +694,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn emotional intelligence at work with practical examples, projects, and expert guidance.",
+    lesson: 55,
+    lastUpdated: "2024-07-17",
+    downloadableResources: 47
   },
   {
     id: 40,
@@ -598,6 +712,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn typing speed mastery with practical examples, projects, and expert guidance.",
+    lesson: 64,
+    lastUpdated: "2025-01-19",
+    downloadableResources: 50
   },
   {
     id: 41,
@@ -613,6 +730,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn build a personal portfolio website with practical examples, projects, and expert guidance.",
+    lesson: 91,
+    lastUpdated: "2024-09-15",
+    downloadableResources: 40
   },
   {
     id: 42,
@@ -628,6 +748,9 @@ const courseData = [
     image: "",
     language: "Vietnamese",
     description: "Learn linux command line essentials with practical examples, projects, and expert guidance.",
+    lesson: 89,
+    lastUpdated: "2024-09-10",
+    downloadableResources: 88
   },
   {
     id: 43,
@@ -643,6 +766,9 @@ const courseData = [
     image: "",
     language: "Spanish",
     description: "Learn learn spanish fast: the basics with practical examples, projects, and expert guidance.",
+    lesson: 71,
+    lastUpdated: "2025-04-25",
+    downloadableResources: 45
   },
   {
     id: 44,
@@ -658,6 +784,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn introduction to robotics with arduino with practical examples, projects, and expert guidance.",
+    lesson: 90,
+    lastUpdated: "2024-09-15",
+    downloadableResources: 90
   },
   {
     id: 45,
@@ -673,6 +802,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn the ultimate excel pivot table guide with practical examples, projects, and expert guidance.",
+    lesson: 33,
+    lastUpdated: "2025-01-28",
+    downloadableResources: 80
   },
   {
     id: 46,
@@ -688,6 +820,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn music theory fundamentals with practical examples, projects, and expert guidance.",
+    lesson: 115,
+    lastUpdated: "2024-09-07",
+    downloadableResources: 112
   },
   {
     id: 47,
@@ -703,6 +838,9 @@ const courseData = [
     image: "",
     language: "Vietnamese",
     description: "Learn developing android apps with kotlin with practical examples, projects, and expert guidance.",
+    lesson: 74,
+    lastUpdated: "2024-07-29",
+    downloadableResources: 101
   },
   {
     id: 48,
@@ -718,6 +856,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn how to start a youtube channel with practical examples, projects, and expert guidance.",
+    lesson: 81,
+    lastUpdated: "2024-11-29",
+    downloadableResources: 40
   },
   {
     id: 49,
@@ -733,6 +874,9 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn interior design basics with practical examples, projects, and expert guidance.",
+    lesson: 84,
+    lastUpdated: "2024-12-03",
+    downloadableResources: 75
   },
   {
     id: 50,
@@ -748,7 +892,11 @@ const courseData = [
     image: "",
     language: "English",
     description: "Learn critical thinking & problem solving with practical examples, projects, and expert guidance.",
+    lesson: 34,
+    lastUpdated: "2024-12-27",
+    downloadableResources: 56
   }
 ];
 
 export default courseData;
+

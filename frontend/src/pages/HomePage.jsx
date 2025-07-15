@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import CourseData from '../data/CourseData';
-import category  from '../data/CategoryData';
 
 import { CiPlay1 } from "react-icons/ci";
 import { FiBookOpen } from "react-icons/fi";

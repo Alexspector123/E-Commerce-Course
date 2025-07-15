@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import { FaRegStar } from "react-icons/fa";
 import { GrGroup } from "react-icons/gr";
@@ -43,9 +44,11 @@ const CourseCard = ( {course} ) => {
                         <span className="text-xl font-bold text-gray-900">${course.price}</span>
                         <span className="text-sm text-gray-500 line-through ml-2">${course.originalPrice}</span>
                     </div>
-                    <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition text-sm">
+                    <Link 
+                        to={`/courses/${id}`}
+                        className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition text-sm">
                         Enroll Now
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
