@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const FilterSection = ({ title, filterType, options, icon, filters }) => {
+const FilterSection = ({ title, filterType, options, icon, filters, handleFilterChange }) => {
     const [openSections, setOpenSections] = useState({
         category: true,
         rating: false,
@@ -15,14 +15,6 @@ const FilterSection = ({ title, filterType, options, icon, filters }) => {
             ...prev,
             [section]: !prev[section]
         }));
-    };
-
-    const handleFilterChange = (filterType, value) => {
-        setFilters(prev => ({
-            ...prev,
-            [filterType]: value
-        }));
-        resetPage();
     };
 
     return (

@@ -99,7 +99,7 @@ const SearchInput = () => {
                     placeholder="Search..."
                     onFocus={() => setIsFocused(true)}
                     className="transition-all duration-200 ease-in-out
-                        md:w-110 h-10
+                        lg:w-110 md:w-60 h-10
                         text-sm
                         bg-slate-100
                         px-3 py-1

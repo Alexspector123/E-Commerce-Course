@@ -26,7 +26,8 @@ const Navbar = () => {
                         <SearchInput />
                     </div>
                 </div>
-                <div className='flex flex-row items-center gap-4'>
+                <div className='flex flex-row items-center gap-4
+                                ml-3'>
                     <div className='hidden lg:block'>
                         <button onClick={() => navigate('/auth')}
                             className='
@@ -40,7 +41,7 @@ const Navbar = () => {
                         </button>
                     </div>
                     <div>
-                        <FiShoppingBag className='text-2xl'/>
+                        <FiShoppingBag className='text- sm:text-2xl'/>
                     </div>
                 </div>
 
