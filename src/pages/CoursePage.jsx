@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 const CustomSwiper = lazy(() => import('../components/CustomSwiper')); // Add lazy loading for swiper
 
-import { FaRegStar } from "react-icons/fa";
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa6";
 import { GrGroup } from "react-icons/gr";
 import { AiOutlineGlobal } from "react-icons/ai";
@@ -10,10 +10,13 @@ import { FiAward } from "react-icons/fi";
 import { IoPlayOutline } from "react-icons/io5";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { BsCartPlus, BsCartCheckFill } from "react-icons/bs";
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
 
 import courseData from '../data/CourseData';
 
 import { useViewHistory } from "../hooks/useViewHistory";
+import { useFavorite } from "../hooks/useFavorite";
+
 import { useCart } from "../context/CartContext";
 
 const CoursePage = () => {
@@ -29,17 +32,19 @@ const CoursePage = () => {
         if (id) addToHistory(id);
     }, [id]);
 
+    const { favorite, addFavorite } = useFavorite();
+
     const renderStars = (rating) => {
         const stars = [];
         const fullStars = Math.floor(rating);
         const hasHalfStar = rating % 1 !== 0;
 
         for (let i = 0; i < fullStars; i++) {
-            stars.push(<FaRegStar key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />);
+            stars.push(<FaStar key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />);
         }
 
         if (hasHalfStar) {
-            stars.push(<FaRegStar key="half" className="w-4 h-4 fill-yellow-400 text-yellow-400 opacity-50" />);
+            stars.push(<FaStarHalfAlt key="half" className="w-4 h-4 fill-yellow-400 text-yellow-400" />);
         }
         const emptyStars = 5 - Math.ceil(rating);
         for (let i = 0; i < emptyStars; i++) {
@@ -74,13 +79,23 @@ const CoursePage = () => {
                                     />
                                 </div>
                                 <div className="flex-1">
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                                            {course.category}
-                                        </span>
-                                        <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                                            {course.level}
-                                        </span>
+                                    <div className="flex justify-between items-center gap-2 mb-2">
+                                        <div className='flex gap-2'>
+                                            <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                {course.category}
+                                            </span>
+                                            <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                {course.level}
+                                            </span>
+                                        </div>
+                                        <button
+                                            onClick={() => addFavorite(courseId)}>
+                                            {favorite.includes(courseId) ? (
+                                                <FaHeart className="w-5 h-5 text-red-400" />
+                                            ) : (
+                                                <FaRegHeart className="w-5 h-5 text-red-400" />
+                                            )}
+                                        </button>
                                     </div>
                                     <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
                                         {course.title}
@@ -174,7 +189,7 @@ const CoursePage = () => {
                             </div>
 
                             <div className="space-y-3 mb-6">
-                                <button 
+                                <button
                                     onClick={() => navigate('/cart')}
                                     className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
                                 >
@@ -187,7 +202,7 @@ const CoursePage = () => {
                                         "Enroll Now"
                                     )}
                                 </button>
-                                <button 
+                                <button
                                     onClick={() => {
                                         if (isInCart) {
                                             removeFromCart(courseId);
@@ -203,8 +218,8 @@ const CoursePage = () => {
                                         }
                                     }}
                                     className={`w-full font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2
-                                        ${isInCart 
-                                            ? 'bg-red-50 text-red-600 hover:bg-red-100' 
+                                        ${isInCart
+                                            ? 'bg-red-50 text-red-600 hover:bg-red-100'
                                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                         }`}
                                 >
