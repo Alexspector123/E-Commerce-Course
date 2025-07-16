@@ -26,7 +26,7 @@ const SearchResultModal = ({ results, isInput, modalRef }) => {
 
                   <div className='flex flex-col gap-3'>
                     {results.course.slice(0, 5).map((course) => (
-                      <SearchCourseItem id={course.id} data={course} />
+                      <SearchCourseItem key={course.id} data={course} />
                     ))}
                   </div>
                 </div>

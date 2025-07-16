@@ -8,6 +8,8 @@ import SearchResultModal from './SearchResultModal';
 
 import CourseData from '../../data/CourseData';
 
+import { useSearch } from '../../context/SearchContext';
+
 const SearchInput = () => {
 
     const [search, setSearch] = useState("")
@@ -21,6 +23,8 @@ const SearchInput = () => {
     const containerRefMobile = useRef(null);
 
     const navigate = useNavigate();
+
+    const { setSearchTerm } = useSearch();
 
     {/* Fetch data from input search */ }
     const fetchDropdownOptions = (value) => {
@@ -40,6 +44,7 @@ const SearchInput = () => {
     const handleInputOnchange = (e) => {
         const { value } = e.target;
         setSearch(value);
+        setSearchTerm(value);
         debounceDropDown(value);
     }
 

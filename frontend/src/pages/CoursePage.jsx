@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
+const CustomSwiper = lazy(() => import('../components/CustomSwiper')); // Add lazy loading for swiper
 
 import { FaRegStar } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa6";
@@ -19,10 +20,6 @@ const CoursePage = () => {
     const courseId = parseInt(id);
     const course = courseData.find(c => c.id === courseId);
 
-    if (!course) {
-        return <div>Course not found</div>;
-    }
-    
     const { addToHistory } = useViewHistory();
     useEffect(() => {
         if (id) addToHistory(id);
@@ -46,6 +43,16 @@ const CoursePage = () => {
         }
         return stars;
     };
+
+    const filteredCourses = course.title
+        ? courseData.filter(c =>
+            c.id !== course.id &&
+            (c.title.toLowerCase().includes(course.title.toLowerCase()) ||
+                c.category.toLowerCase().includes(course.category.toLowerCase()))
+        )
+        : courseData;
+
+    const relatedCourse = filteredCourses.slice(0, 10);
 
     return (
         <div>
@@ -195,6 +202,15 @@ const CoursePage = () => {
                         </div>
                     </div>
                 </div>
+                {/* Related Courses */}
+                {relatedCourse.length !== 0 && (
+                    <div className="py-16 px-6">
+                        <h2 className="text-xl font-bold mb-5 text-gray-900">Related Course</h2>
+                        <Suspense fallback={<div>Loading Swiper...</div>}>
+                            <CustomSwiper courses={relatedCourse} />
+                        </Suspense>
+                    </div>
+                )}
             </main>
         </div>
     )

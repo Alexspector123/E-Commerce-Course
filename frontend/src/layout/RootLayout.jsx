@@ -6,20 +6,24 @@ import Footer from '../components/Footer'
 
 import ScrollToTop from '../components/custom/ScrollToTop';
 
+import { SearchProvider } from '../context/SearchContext.jsx';
+
 const RootLayout = () => {
   return (
-    <div className='min-h-screen
+    <SearchProvider>
+      <div className='min-h-screen
                     flex flex-col overflow-hidden'>
-      <div className='h-full w-full'>
-        <Navbar />
-        <div className='
+        <div className='h-full w-full'>
+          <Navbar />
+          <div className='
                         flex-grow'>
-          <ScrollToTop />
-          <Outlet />
+            <ScrollToTop />
+            <Outlet />
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+    </SearchProvider>
   )
 }
 

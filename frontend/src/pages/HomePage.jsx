@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useMemo } from 'react';
 const CustomSwiper = lazy(() => import('../components/CustomSwiper')); // Add lazy loading for swiper
 
 import courseData from '../data/CourseData';
@@ -12,7 +12,23 @@ import { FaChevronRight } from "react-icons/fa";
 
 import EmailBox from '../components/EmailBox';
 
+import { useSearch } from '../context/SearchContext';
+
 const HomePage = () => {
+
+  const { searchTerm } = useSearch();
+  const relatedCourse = useMemo(() => {
+    if (!courseData) return [];
+
+    const filtered = searchTerm
+      ? courseData.filter(course =>
+        course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        course.category.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      : courseData;
+
+    return filtered.slice(0, 10);
+  }, [courseData, searchTerm]);
 
   return (
     <div className="bg-stone-100 
@@ -20,7 +36,7 @@ const HomePage = () => {
       {/* Main Content */}
       <div className="flex-1">
         {/* Hero Section */}
-        <section className="relative 
+        <div className="relative 
                             bg-gradient-to-r from-green-800 to-green-600 
                             text-white">
           <div className="absolute 
@@ -66,10 +82,10 @@ const HomePage = () => {
                           bg-cover bg-center opacity-90 
                           hidden lg:block"
             style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23ddd6fe' width='400' height='300'/%3E%3Ctext x='200' y='140' text-anchor='middle' fill='%23666' font-size='16'%3EOnline Learning%3C/text%3E%3Ctext x='200' y='160' text-anchor='middle' fill='%23666' font-size='16'%3EIllustration%3C/text%3E%3C/svg%3E')" }}></div>
-        </section>
+        </div>
 
         {/* Stats Section */}
-        <section className="py-16 
+        <div className="py-16 
                           bg-white">
           <div className="max-w-7xl 
                           mx-auto 
@@ -95,27 +111,12 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* Featured Courses */}
-        <section className="py-16 
-                          bg-stone-50">
-          <div className="max-w-7xl 
-                          mx-auto 
-                          px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Featured Courses</h2>
-
-            {/* Course Grid */}
-            <Suspense fallback={<div>Loading Swiper...</div>}>
-              <CustomSwiper courses={courseData} />
-            </Suspense>
-          </div>
-        </section>
-
-        {/* Learning Path */}
-        <section className="py-16 bg-white">
+        {/* Genres */}
+        <div className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Popular Learning Paths</h2>
+            <h2 className="text-3xl font-bold mb-12 text-gray-900">Popular Genres</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
@@ -157,10 +158,38 @@ const HomePage = () => {
               ))}
             </div>
           </div>
-        </section>
+        </div>
+
+        {/* Featured Courses */}
+        <div className="py-16 
+                          bg-stone-50">
+          <div className="max-w-7xl 
+                          mx-auto 
+                          px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold mb-12 text-gray-900">Featured Courses</h2>
+            <Suspense fallback={<div>Loading Swiper...</div>}>
+              <CustomSwiper courses={courseData} />
+            </Suspense>
+          </div>
+        </div>
+
+        {/* Related Courses */}
+        {relatedCourse.length !== 0 && (
+          <div className="py-16 
+                          bg-stone-50">
+            <div className="max-w-7xl 
+                          mx-auto 
+                          px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold mb-12 text-gray-900">Because you have searched "{searchTerm}"</h2>
+              <Suspense fallback={<div>Loading Swiper...</div>}>
+                <CustomSwiper courses={relatedCourse} />
+              </Suspense>
+            </div>
+          </div>
+        )}
 
         {/* Why Choose Us */}
-        <section className="py-16 bg-stone-50">
+        <div className="py-16 bg-stone-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Why Choose ITUL?</h2>
 
@@ -198,9 +227,8 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* Newsletter CTA */}
         <EmailBox />
       </div>
     </div>
