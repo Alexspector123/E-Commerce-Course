@@ -8,6 +8,7 @@ import AuthPage from './pages/authpage/AuthPage';
 import CategoryPage from "./pages/CategoryPage";
 import CoursePage from "./pages/CoursePage";
 import ProfilePage from "./pages/ProfilePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 import './App.css'
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
         <Route path=":id" element={<CoursePage />} />
       </Route>
       <Route path="profile/edit" element={<ProfilePage />}/>
+      <Route path="*" element={<NotFoundPage />}/>
     </Route>
     </>
   )

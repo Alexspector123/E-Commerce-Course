@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { lazy, Suspense } from 'react';
+const CustomSwiper = lazy(() => import('../components/CustomSwiper')); // Add lazy loading for swiper
 
-import CourseData from '../data/CourseData';
+import courseData from '../data/CourseData';
 
 import { CiPlay1 } from "react-icons/ci";
 import { FiBookOpen } from "react-icons/fi";
@@ -9,17 +10,12 @@ import { GrTarget } from "react-icons/gr";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { FaChevronRight } from "react-icons/fa";
 
-import CourseCard from '../components/course/CourseCard';
 import EmailBox from '../components/EmailBox';
 
 const HomePage = () => {
 
-  const [activeTab, setActiveTab] = useState('all')
-
-  const filteredCourses = activeTab === 'all' ? CourseData : CourseData.filter(course => course.category === activeTab);
-
   return (
-  <div className="bg-stone-100 
+    <div className="bg-stone-100 
                     flex flex-col">
       {/* Main Content */}
       <div className="flex-1">
@@ -69,7 +65,7 @@ const HomePage = () => {
                           w-1/2 h-full 
                           bg-cover bg-center opacity-90 
                           hidden lg:block"
-               style={{backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23ddd6fe' width='400' height='300'/%3E%3Ctext x='200' y='140' text-anchor='middle' fill='%23666' font-size='16'%3EOnline Learning%3C/text%3E%3Ctext x='200' y='160' text-anchor='middle' fill='%23666' font-size='16'%3EIllustration%3C/text%3E%3C/svg%3E')"}}></div>
+            style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23ddd6fe' width='400' height='300'/%3E%3Ctext x='200' y='140' text-anchor='middle' fill='%23666' font-size='16'%3EOnline Learning%3C/text%3E%3Ctext x='200' y='160' text-anchor='middle' fill='%23666' font-size='16'%3EIllustration%3C/text%3E%3C/svg%3E')" }}></div>
         </section>
 
         {/* Stats Section */}
@@ -110,11 +106,9 @@ const HomePage = () => {
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Featured Courses</h2>
 
             {/* Course Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {filteredCourses.map((course) => (
-                <CourseCard key={course.id} course={course} />
-              ))}
-            </div>
+            <Suspense fallback={<div>Loading Swiper...</div>}>
+              <CustomSwiper courses={courseData} />
+            </Suspense>
           </div>
         </section>
 
@@ -122,7 +116,7 @@ const HomePage = () => {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Popular Learning Paths</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
@@ -169,7 +163,7 @@ const HomePage = () => {
         <section className="py-16 bg-stone-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Why Choose ITUL?</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">

@@ -12,7 +12,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn react for beginners with practical examples, projects, and expert guidance.",
+    description: "Start your journey with React by building real-world projects. This course guides you through the core concepts of React, including components, state, props, and hooks, making it perfect for beginners.",
     lesson: 24,
     lastUpdated: "2025-02-02"
   },
@@ -29,7 +29,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn mastering data structures & algorithms with practical examples, projects, and expert guidance.",
+    description: "Master data structures and algorithms with hands-on examples and coding challenges. Ideal for preparing technical interviews and optimizing software solutions.",
     lesson: 106,
     lastUpdated: "2024-10-23"
   },
@@ -46,7 +46,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn digital marketing bootcamp with practical examples, projects, and expert guidance.",
+    description: "Dive into the essentials of digital marketing. Learn SEO, social media strategies, email campaigns, and analytics to drive real business results.",
     lesson: 42,
     lastUpdated: "2025-05-26"
   },
@@ -63,7 +63,7 @@ const courseData = [
     level: "Advanced",
     image: "",
     language: "English",
-    description: "Learn advanced python programming with practical examples, projects, and expert guidance.",
+    description: "Advance your Python skills by exploring complex topics such as decorators, generators, OOP, multithreading, and performance optimization.",
     lesson: 114,
     lastUpdated: "2024-09-25",
     downloadableResources: 45
@@ -81,7 +81,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn graphic design masterclass with practical examples, projects, and expert guidance.",
+    description: "Learn professional graphic design principles and tools. This course covers typography, color theory, branding, and layout design through hands-on projects.",
     lesson: 46,
     lastUpdated: "2024-08-01",
     downloadableResources: 54
@@ -99,7 +99,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn complete ios app development with swift with practical examples, projects, and expert guidance.",
+    description: "Learn to develop robust iOS apps using Swift and Xcode. You’ll build real apps from scratch and gain insights into Apple’s development ecosystem.",
     lesson: 33,
     lastUpdated: "2025-03-26",
     downloadableResources: 40
@@ -117,7 +117,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn the ultimate drawing course with practical examples, projects, and expert guidance.",
+    description: "Unlock your artistic potential with step-by-step lessons on sketching, shading, and perspective. Designed for absolute beginners to aspiring artists.",
     lesson: 65,
     lastUpdated: "2025-01-30",
     downloadableResources: 45
@@ -135,7 +135,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn sql & database design with practical examples, projects, and expert guidance.",
+    description: "Understand SQL and relational databases by building efficient, normalized database schemas and writing advanced queries for data analysis.",
     lesson: 35,
     lastUpdated: "2024-11-23",
     downloadableResources: 36
@@ -153,7 +153,7 @@ const courseData = [
     level: "Advanced",
     image: "",
     language: "English",
-    description: "Learn full-stack web development with mern with practical examples, projects, and expert guidance.",
+    description: "Become a full-stack web developer by mastering the MERN stack (MongoDB, Express, React, Node.js) through project-based learning.",
     lesson: 32,
     lastUpdated: "2025-04-29",
     downloadableResources: 35
@@ -171,7 +171,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn business analytics with excel with practical examples, projects, and expert guidance.",
+    description: "Master business analytics with Excel by learning formulas, pivot tables, data visualization, and decision-making models.",
     lesson: 12,
     lastUpdated: "2024-11-19",
     downloadableResources: 70
@@ -189,7 +189,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn learn ethical hacking from scratch with practical examples, projects, and expert guidance.",
+    description: "Learn ethical hacking from the ground up, including network scanning, penetration testing, and securing systems using real-world tools.",
     lesson: 33,
     lastUpdated: "2025-01-13",
     downloadableResources: 40
@@ -207,7 +207,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn photography masterclass: a complete guide with practical examples, projects, and expert guidance.",
+    description: "Explore photography from fundamentals to advanced techniques. Learn about lighting, composition, camera settings, and editing like a pro.",
     lesson: 54,
     lastUpdated: "2025-02-27",
     downloadableResources: 48
@@ -225,7 +225,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn ui/ux design with figma with practical examples, projects, and expert guidance.",
+    description: "Design engaging user interfaces and experiences using Figma. This course walks through UX principles, wireframing, prototyping, and usability testing.",
     lesson: 22,
     lastUpdated: "2024-09-17",
     downloadableResources: 37
@@ -243,7 +243,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn kubernetes for developers with practical examples, projects, and expert guidance.",
+    description: "Master Kubernetes fundamentals and learn how to deploy, scale, and manage containerized applications in a real-world DevOps workflow.",
     lesson: 112,
     lastUpdated: "2025-04-04",
     downloadableResources: 45
@@ -261,7 +261,7 @@ const courseData = [
     level: "Advanced",
     image: "",
     language: "English",
-    description: "Learn machine learning a-z with practical examples, projects, and expert guidance.",
+    description: "Understand the core concepts of machine learning, including regression, classification, clustering, and neural networks with hands-on examples.",
     lesson: 43,
     lastUpdated: "2025-03-16",
     downloadableResources: 48
@@ -279,7 +279,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn mindfulness & meditation with practical examples, projects, and expert guidance.",
+    description: "Build a foundation for mental clarity and emotional balance through mindfulness techniques, guided meditations, and real-life applications.",
     lesson: 66,
     lastUpdated: "2025-03-14",
     downloadableResources: 35
@@ -297,7 +297,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn docker & containers for devops with practical examples, projects, and expert guidance.",
+    description: "Understand Docker and containerization to streamline development and deployment workflows in modern DevOps environments.",
     lesson: 106,
     lastUpdated: "2025-02-09",
     downloadableResources: 50
@@ -315,7 +315,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn public speaking mastery with practical examples, projects, and expert guidance.",
+    description: "Develop the confidence and skills to speak effectively in any public setting. Covers speech structure, delivery, and handling anxiety.",
     lesson: 78,
     lastUpdated: "2025-06-23",
     downloadableResources: 50
@@ -333,7 +333,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn english grammar bootcamp with practical examples, projects, and expert guidance.",
+    description: "Strengthen your English grammar with detailed lessons on tenses, sentence structure, punctuation, and common usage rules.",
     lesson: 94,
     lastUpdated: "2024-10-17",
     downloadableResources: 70
@@ -351,7 +351,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn illustrator cc: beginner to advanced with practical examples, projects, and expert guidance.",
+    description: "Master Adobe Illustrator from basic tools to advanced techniques like vector illustration, typography, and creative layouts.",
     lesson: 113,
     lastUpdated: "2024-11-04",
     downloadableResources: 65
@@ -369,7 +369,7 @@ const courseData = [
     level: "Advanced",
     image: "",
     language: "English",
-    description: "Learn aws certified solutions architect with practical examples, projects, and expert guidance.",
+    description: "Prepare for the AWS Solutions Architect exam by learning core AWS services, architecture best practices, and real-world cloud scenarios.",
     lesson: 32,
     lastUpdated: "2025-01-09",
     downloadableResources: 60
@@ -387,7 +387,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn financial modeling for beginners with practical examples, projects, and expert guidance.",
+    description: "Gain practical skills in financial modeling using Excel to forecast, value, and analyze business performance.",
     lesson: 57,
     lastUpdated: "2024-11-05",
     downloadableResources: 50
@@ -405,7 +405,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn google ads & seo fundamentals with practical examples, projects, and expert guidance.",
+    description: "Learn the fundamentals of SEO and Google Ads to improve website visibility and run effective ad campaigns with real data insights.",
     lesson: 99,
     lastUpdated: "2024-08-15",
     downloadableResources: 45
@@ -423,7 +423,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn 3d modeling in blender with practical examples, projects, and expert guidance.",
+    description: "Master 3D modeling in Blender by creating realistic models, materials, lighting setups, and rendering professional-quality scenes.",
     lesson: 72,
     lastUpdated: "2024-12-17",
     downloadableResources: 70
@@ -441,7 +441,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn career development masterclass with practical examples, projects, and expert guidance.",
+    description: "Plan and grow your career strategically with tools and insights into personal branding, goal setting, and professional communication.",
     lesson: 12,
     lastUpdated: "2024-08-20",
     downloadableResources: 70
@@ -459,7 +459,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn cybersecurity basics with practical examples, projects, and expert guidance.",
+    description: "Understand the key principles of cybersecurity, including threats, defenses, network protocols, and ethical responsibilities.",
     lesson: 120,
     lastUpdated: "2024-09-29",
     downloadableResources: 65
@@ -477,7 +477,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn cooking fundamentals with practical examples, projects, and expert guidance.",
+    description: "Learn essential cooking techniques, from chopping and seasoning to creating complete dishes, perfect for beginners.",
     lesson: 88,
     lastUpdated: "2025-06-24",
     downloadableResources: 67
@@ -495,7 +495,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "Vietnamese",
-    description: "Learn introduction to java programming with practical examples, projects, and expert guidance.",
+    description: "Get started with Java programming through foundational concepts like variables, loops, OOP, and building simple applications.",
     lesson: 41,
     lastUpdated: "2025-02-26",
     downloadableResources: 88
@@ -513,7 +513,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "Japanese",
-    description: "Learn learn japanese for beginners with practical examples, projects, and expert guidance.",
+    description: "Begin your Japanese language journey by learning basic grammar, vocabulary, and conversational skills for everyday use.",
     lesson: 15,
     lastUpdated: "2024-12-21",
     downloadableResources: 80
@@ -531,7 +531,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn chatgpt & ai tools for productivity with practical examples, projects, and expert guidance.",
+    description: "Boost your productivity using AI tools like ChatGPT. Learn how to automate tasks, manage projects, and enhance creativity efficiently.",
     lesson: 62,
     lastUpdated: "2024-12-04",
     downloadableResources: 75
@@ -549,7 +549,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn introduction to blockchain with practical examples, projects, and expert guidance.",
+    description: "Understand blockchain technology, its components, consensus mechanisms, and real-world applications in finance and beyond.",
     lesson: 100,
     lastUpdated: "2025-05-30",
     downloadableResources: 90
@@ -567,7 +567,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn yoga for beginners with practical examples, projects, and expert guidance.",
+    description: "Explore yoga through guided sessions focused on posture, breathing, flexibility, and relaxation techniques for beginners.",
     lesson: 118,
     lastUpdated: "2024-09-29",
     downloadableResources: 50
@@ -585,7 +585,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn the art of negotiation with practical examples, projects, and expert guidance.",
+    description: "Learn strategies to negotiate effectively in both personal and professional settings through practical techniques and scenarios.",
     lesson: 77,
     lastUpdated: "2025-01-09",
     downloadableResources: 40
@@ -603,7 +603,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn unity game development with practical examples, projects, and expert guidance.",
+    description: "Build immersive games using Unity. Learn about scenes, scripting, physics, animations, and publishing your game.",
     lesson: 52,
     lastUpdated: "2025-04-12",
     downloadableResources: 90
@@ -621,7 +621,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn introduction to philosophy with practical examples, projects, and expert guidance.",
+    description: "Discover fundamental philosophical ideas, schools of thought, and critical thinking techniques that shape human understanding.",
     lesson: 96,
     lastUpdated: "2024-09-24",
     downloadableResources: 110
@@ -639,7 +639,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn cryptocurrency investment 101 with practical examples, projects, and expert guidance.",
+    description: "Understand the basics of investing in cryptocurrencies including wallets, exchanges, risk management, and blockchain literacy.",
     lesson: 107,
     lastUpdated: "2025-04-02",
     downloadableResources: 60
@@ -657,7 +657,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "Vietnamese",
-    description: "Learn building restful apis with node.js with practical examples, projects, and expert guidance.",
+    description: "Learn to build secure and scalable RESTful APIs using Node.js, Express, and MongoDB with real-world best practices.",
     lesson: 115,
     lastUpdated: "2025-04-04",
     downloadableResources: 65
@@ -675,7 +675,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn adobe premiere pro for beginners with practical examples, projects, and expert guidance.",
+    description: "Edit professional videos with Adobe Premiere Pro. Learn timeline editing, transitions, effects, and color grading from scratch.",
     lesson: 108,
     lastUpdated: "2024-12-08",
     downloadableResources: 90
@@ -693,7 +693,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn emotional intelligence at work with practical examples, projects, and expert guidance.",
+    description: "Improve emotional intelligence to boost team collaboration, communication, and leadership with actionable strategies.",
     lesson: 55,
     lastUpdated: "2024-07-17",
     downloadableResources: 47
@@ -711,7 +711,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn typing speed mastery with practical examples, projects, and expert guidance.",
+    description: "Enhance your typing speed and accuracy through interactive exercises, games, and personalized practice plans.",
     lesson: 64,
     lastUpdated: "2025-01-19",
     downloadableResources: 50
@@ -729,7 +729,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn build a personal portfolio website with practical examples, projects, and expert guidance.",
+    description: "Build a modern, responsive personal portfolio website using HTML, CSS, and JavaScript to showcase your work.",
     lesson: 91,
     lastUpdated: "2024-09-15",
     downloadableResources: 40
@@ -747,7 +747,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "Vietnamese",
-    description: "Learn linux command line essentials with practical examples, projects, and expert guidance.",
+    description: "Master the basics of Linux command line including file navigation, permissions, scripting, and system management.",
     lesson: 89,
     lastUpdated: "2024-09-10",
     downloadableResources: 88
@@ -765,7 +765,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "Spanish",
-    description: "Learn learn spanish fast: the basics with practical examples, projects, and expert guidance.",
+    description: "Learn Spanish quickly by focusing on grammar, vocabulary, and real-life conversations to start speaking confidently.",
     lesson: 71,
     lastUpdated: "2025-04-25",
     downloadableResources: 45
@@ -783,7 +783,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "English",
-    description: "Learn introduction to robotics with arduino with practical examples, projects, and expert guidance.",
+    description: "Explore robotics by building Arduino-powered robots and learning key concepts like sensors, circuits, and programming.",
     lesson: 90,
     lastUpdated: "2024-09-15",
     downloadableResources: 90
@@ -801,7 +801,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn the ultimate excel pivot table guide with practical examples, projects, and expert guidance.",
+    description: "Become proficient in Excel pivot tables, charts, and data summaries to extract actionable insights efficiently.",
     lesson: 33,
     lastUpdated: "2025-01-28",
     downloadableResources: 80
@@ -819,7 +819,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn music theory fundamentals with practical examples, projects, and expert guidance.",
+    description: "Learn core music theory concepts such as notation, rhythm, harmony, and scales to understand how music works.",
     lesson: 115,
     lastUpdated: "2024-09-07",
     downloadableResources: 112
@@ -837,7 +837,7 @@ const courseData = [
     level: "Intermediate",
     image: "",
     language: "Vietnamese",
-    description: "Learn developing android apps with kotlin with practical examples, projects, and expert guidance.",
+    description: "Develop Android apps using Kotlin with hands-on projects, UI components, and integration with Android Studio.",
     lesson: 74,
     lastUpdated: "2024-07-29",
     downloadableResources: 101
@@ -855,7 +855,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn how to start a youtube channel with practical examples, projects, and expert guidance.",
+    description: "Start and grow a successful YouTube channel. Learn content planning, branding, video production, and engagement strategies.",
     lesson: 81,
     lastUpdated: "2024-11-29",
     downloadableResources: 40
@@ -873,7 +873,7 @@ const courseData = [
     level: "Beginner",
     image: "",
     language: "English",
-    description: "Learn interior design basics with practical examples, projects, and expert guidance.",
+    description: "Understand the principles of interior design, from layout and color matching to furniture arrangement and space planning.",
     lesson: 84,
     lastUpdated: "2024-12-03",
     downloadableResources: 75
@@ -891,7 +891,7 @@ const courseData = [
     level: "All Levels",
     image: "",
     language: "English",
-    description: "Learn critical thinking & problem solving with practical examples, projects, and expert guidance.",
+    description: "Sharpen your problem-solving and critical thinking skills using logical reasoning, frameworks, and decision-making tools.",
     lesson: 34,
     lastUpdated: "2024-12-27",
     downloadableResources: 56
