@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { IoMailOutline } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
@@ -9,15 +9,19 @@ import { FiEdit3 } from "react-icons/fi";
 
 import CourseCard from '../components/course/CourseCard';
 
+import courseData from '../data/CourseData';
+
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState('favorites');
+  const [favoriteCourses, setFavoriteCourses] = useState([]);
+  const [historyItems, setHistoryItems] = useState([]);
 
   const userData = {
     name: "Hitori",
     email: "alexspector8766@email.com",
     location: "HCMC, VN",
     joinDate: "July 2025",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    avatar: "https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c80785622aea0ce347a6e5b358dfd3e6da4acd75c191f6938a580d7ac16fae9e998202/Anh_1.jpg",
     bio: "Full-stack developer passionate about creating innovative web applications. Always learning and exploring new technologies.",
     stats: {
       coursesCompleted: 12,
@@ -27,77 +31,23 @@ const ProfilePage = () => {
     }
   };
 
-  const favoriteCourses = [
-    {
-      id: 1,
-      title: "Complete React Developer Course",
-      instructor: "John Smith",
-      rating: 4.8,
-      students: 45678,
-      duration: "40 hours",
-      price: 89.99,
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      category: "Web Development"
-    },
-    {
-      id: 2,
-      title: "Python Data Science Masterclass",
-      instructor: "Dr. Sarah Wilson",
-      rating: 4.9,
-      students: 32456,
-      duration: "55 hours",
-      price: 129.99,
-      image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      category: "Data Science"
-    },
-    {
-      id: 3,
-      title: "UI/UX Design Fundamentals",
-      instructor: "Maria Garcia",
-      rating: 4.7,
-      students: 28934,
-      duration: "32 hours",
-      price: 79.99,
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      category: "Design"
-    }
-  ];
+  // Favorite List
+  useEffect(() => {
+    const getFavoriteList = JSON.parse(localStorage.getItem("favorite")) || [];
+    const list = getFavoriteList.map(id => {
+      return courseData.find(course => course.id === id);
+    }).filter(Boolean);
+    setFavoriteCourses(list);
+  }, []);
 
-  const historyItems = [
-    {
-      id: 1,
-      title: "JavaScript ES6+ Complete Guide",
-      instructor: "Mike Johnson",
-      rating: 4.6,
-      progress: 100,
-      completedDate: "2024-01-15",
-      duration: "28 hours",
-      image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      category: "JavaScript"
-    },
-    {
-      id: 2,
-      title: "Machine Learning Fundamentals",
-      instructor: "Dr. Anna Chen",
-      rating: 4.8,
-      progress: 65,
-      lastAccessed: "2024-01-10",
-      duration: "45 hours",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      category: "Machine Learning"
-    },
-    {
-      id: 3,
-      title: "Advanced CSS and Sass",
-      instructor: "Lisa Anderson",
-      rating: 4.7,
-      progress: 100,
-      completedDate: "2023-12-22",
-      duration: "22 hours",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      category: "CSS"
-    }
-  ];
+  // History List
+    useEffect(() => {
+    const getHistoryList = JSON.parse(localStorage.getItem("history")) || [];
+    const list = getHistoryList.map(id => {
+      return courseData.find(course => course.id === Number(id));
+    }).filter(Boolean);
+    setHistoryItems(list);
+  }, []);
 
   return (
     <div>
@@ -192,9 +142,9 @@ const ProfilePage = () => {
                           py-4 px-6 text-sm font-medium 
                           transition duration-400
                           ${activeTab === 'favorites'
-                            ? 'text-green-500 border-b-2 border-green-500'
-                            : 'text-gray-500 hover:text-gray-700'
-                          }`}
+                  ? 'text-green-500 border-b-2 border-green-500'
+                  : 'text-gray-500 hover:text-gray-700'
+                }`}
             >
               <div className="flex items-center justify-center gap-2">
                 <FaRegHeart className="w-4 h-4" />
@@ -207,9 +157,9 @@ const ProfilePage = () => {
                           py-4 px-6 text-sm font-medium 
                           transition duration-400
                           ${activeTab === 'history'
-                            ? 'text-green-500 border-b-2 border-green-500'
-                            : 'text-gray-500 hover:text-gray-700'
-                          }`}
+                  ? 'text-green-500 border-b-2 border-green-500'
+                  : 'text-gray-500 hover:text-gray-700'
+                }`}
             >
               <div className="flex items-center justify-center gap-2">
                 <LuHistory className="w-4 h-4" />
@@ -278,7 +228,7 @@ const ProfilePage = () => {
                                           mx-auto mb-4" />
                     <h3 className="text-lg font-medium text-gray-900 
                                     mb-2">
-                        No view history
+                      No view history
                     </h3>
                     <p className="text-gray-500">Your preview course history will appear here</p>
                   </div>

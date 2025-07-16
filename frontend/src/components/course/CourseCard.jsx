@@ -6,8 +6,13 @@ import { GrGroup } from "react-icons/gr";
 import { FaRegClock } from "react-icons/fa6";
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
 
+import { useFavorite } from "../../hooks/useFavorite";
+
 const CourseCard = ({ course }) => {
     const { id, image, level, rating, title, instructor, students, duration } = course;
+
+    const { favorite, addFavorite } = useFavorite();
+
     return (
         <div key={id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
             <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
@@ -22,9 +27,14 @@ const CourseCard = ({ course }) => {
                         {level}
                     </span>
                     <div className='flex items-center gap-2'>
-                        <div>
-                            <FaRegHeart className="w-4 h-4 text-red-400" />
-                        </div>
+                        <button
+                            onClick={() => addFavorite(id)}>
+                            {favorite.includes(id) ? (
+                                <FaHeart className="w-4 h-4 text-red-400" />
+                            ) : (
+                                <FaRegHeart className="w-4 h-4 text-red-400" />
+                            )}
+                        </button>
                         <div className="flex items-center">
                             <FaRegStar className="w-4 h-4 text-yellow-400 fill-current" />
                             <span className="text-sm text-gray-600 ml-1">{rating}</span>

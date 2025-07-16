@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 
 import { FaRegStar } from "react-icons/fa";
@@ -11,6 +11,8 @@ import { MdOutlineFileDownload } from "react-icons/md";
 
 import courseData from '../data/CourseData';
 
+import { useViewHistory } from "../hooks/useViewHistory";
+
 const CoursePage = () => {
 
     const { id } = useParams();
@@ -20,6 +22,11 @@ const CoursePage = () => {
     if (!course) {
         return <div>Course not found</div>;
     }
+    
+    const { addToHistory } = useViewHistory();
+    useEffect(() => {
+        if (id) addToHistory(id);
+    }, [id]);
 
     const renderStars = (rating) => {
         const stars = [];
@@ -50,7 +57,7 @@ const CoursePage = () => {
                             <div className="flex flex-col sm:flex-row gap-6">
                                 <div className="flex-shrink-0">
                                     <img
-                                        src={course.image}
+                                        src={course.image || "/default-course.png"}
                                         alt={course.title}
                                         className="w-full sm:w-48 h-48 object-cover rounded-lg shadow-md"
                                     />

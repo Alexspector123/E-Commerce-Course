@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom';
+
+import { FiShoppingBag } from "react-icons/fi";
+import { useNavigate } from 'react-router-dom';
+import { RxAvatar } from "react-icons/rx"
 
 import Name from './Name';
 
 import SearchInput from './search/SearchInput';
-import { FiShoppingBag } from "react-icons/fi";
-import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const navigate = useNavigate();
-
-    const [isOpenSearchMobile, setIsOpenSearchMobile] = useState(false);
 
     return (
         <div className='
@@ -41,8 +42,17 @@ const Navbar = () => {
                         </button>
                     </div>
                     <div>
-                        <FiShoppingBag className='text- sm:text-2xl'/>
+                        <FiShoppingBag className='w-5 h-5 md:w-6 md:h-6
+                                                  cursor-pointer
+                                                  hover:text-green-500
+                                                  transition duration-400' />
                     </div>
+                    <Link to="/profile/edit">
+                        <RxAvatar className='w-5 h-5 md:w-6 md:h-6
+                                             cursor-pointer
+                                             hover:text-green-500
+                                              transition duration-400' />
+                    </Link>
                 </div>
 
             </div>
