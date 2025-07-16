@@ -49,6 +49,11 @@ const ProfilePage = () => {
     setHistoryItems(list);
   }, []);
 
+  const clearHistory = () => {
+    localStorage.removeItem("history");
+    setHistoryItems([]);
+  }
+
   return (
     <div>
       <div className="mx-auto 
@@ -208,7 +213,8 @@ const ProfilePage = () => {
                   <button className="text-green-500 hover:text-green-600
                                         cursor-pointer
                                         transition duration-300
-                                        text-sm font-medium">
+                                        text-sm font-medium"
+                          onClick={clearHistory}>
                     Clear History
                   </button>
                 </div>
