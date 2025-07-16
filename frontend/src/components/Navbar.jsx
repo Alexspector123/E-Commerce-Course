@@ -1,17 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-import { FiShoppingBag } from "react-icons/fi";
+import { BsCart3 } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import { RxAvatar } from "react-icons/rx"
 import { FaBars } from "react-icons/fa6";
 
 import Name from './Name';
-
 import SearchInput from './search/SearchInput';
+import { useCart } from '../context/CartContext';
 
 const Navbar = ({ showSidebar, sidebar }) => {
     const navigate = useNavigate();
+    const { cartItems } = useCart();
 
     return (
         <div className='
@@ -52,11 +53,19 @@ const Navbar = ({ showSidebar, sidebar }) => {
                             Log in
                         </button>
                     </div>
-                    <div>
-                        <FiShoppingBag className='w-5 h-5 md:w-6 md:h-6
-                                                  cursor-pointer
-                                                  hover:text-green-500
-                                                  transition duration-400' />
+                    <div className="relative">
+                        <button 
+                            onClick={() => navigate('/cart')}
+                            className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            aria-label="Shopping Cart"
+                        >
+                            <BsCart3 className='w-5 h-5 md:w-6 md:h-6 hover:text-green-500 transition duration-400' />
+                            {cartItems.length > 0 && (
+                                <span className="absolute -top-1 -right-1 bg-green-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                                    {cartItems.length}
+                                </span>
+                            )}
+                        </button>
                     </div>
                     <Link to="/profile/edit">
                         <RxAvatar className='w-5 h-5 md:w-6 md:h-6

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import { motion } from 'framer-motion';
+
 import { FaRegStar } from "react-icons/fa";
 import { GrGroup } from "react-icons/gr";
 import { FaRegClock } from "react-icons/fa6";
@@ -14,14 +16,25 @@ const CourseCard = ({ course }) => {
     const { favorite, addFavorite } = useFavorite();
 
     return (
-        <div key={id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
-            <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+        <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+                duration: 1,
+                delay: 0.75,
+                ease: [0.33, 1, 0.68, 1],
+                type: "tween"
+            }}
+            key={id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
+            <div className="aspect-video bg-gradient-to-br flex items-center justify-center">
                 <div className="text-center text-4xl text-green-500
                                 mb-2">
-                    {image}
+                    <img 
+                        src={image} 
+                        alt="" />
                 </div>
             </div>
-            <div className="p-4">
+            <div className="py-3 px-1 md:p-4">
                 <div className="flex items-center justify-between mb-2">
                     <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
                         {level}
@@ -55,7 +68,7 @@ const CourseCard = ({ course }) => {
                         {duration}
                     </div>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-3 md:flex-row items-center justify-between">
                     <div>
                         <span className="text-xl font-bold text-gray-900">${course.price}</span>
                         <span className="text-sm text-gray-500 line-through ml-2">${course.originalPrice}</span>
@@ -67,7 +80,7 @@ const CourseCard = ({ course }) => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

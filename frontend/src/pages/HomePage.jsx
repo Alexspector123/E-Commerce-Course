@@ -2,6 +2,8 @@ import React, { lazy, Suspense, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 const CustomSwiper = lazy(() => import('../components/CustomSwiper')); // Add lazy loading for swiper
 
+import { motion } from 'framer-motion';
+
 import courseData from '../data/CourseData';
 
 import { CiPlay1 } from "react-icons/ci";
@@ -60,7 +62,15 @@ const HomePage = () => {
                 Build real-world skills that matter.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button 
+                <motion.button
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.2,
+                    ease: [0.33, 1, 0.68, 1],
+                    type: "tween"
+                  }}
                   onClick={() => navigate('/courses/search/?q=')}
                   className="
                     bg-green-500 hover:bg-green-600
@@ -69,8 +79,17 @@ const HomePage = () => {
                       rounded-lg 
                       transition duration-400 transform hover:scale-105">
                   EXPLORE COURSES
-                </button>
-                <button className="border-2 border-white 
+                </motion.button>
+                <motion.button
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.2,
+                    ease: [0.33, 1, 0.68, 1],
+                    type: "tween"
+                  }}
+                  className="border-2 border-white 
                                  text-white hover:text-green-600 font-semibold
                                  hover:bg-white
                                    px-8 py-3 
@@ -78,7 +97,7 @@ const HomePage = () => {
                                    items-center flex">
                   <CiPlay1 className="w-5 h-5 inline mr-2" />
                   WATCH DEMO
-                </button>
+                </motion.button>
               </div>
             </div>
           </div>
@@ -147,10 +166,10 @@ const HomePage = () => {
                   icon: "📱"
                 }
               ].map((path, index) => (
-                <div key={index} className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+                <div key={index} className="flex flex-col bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
                   <div className="text-4xl mb-4">{path.icon}</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{path.title}</h3>
-                  <p className="text-gray-600 mb-4">{path.description}</p>
+                  <p className="text-gray-600 mb-4 flex-grow">{path.description}</p>
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <span>{path.courses} courses</span>
                     <span>{path.duration}</span>
@@ -179,7 +198,7 @@ const HomePage = () => {
         </div>
 
         {/* Related Courses */}
-        {relatedCourse.length !== 0 && (
+        {relatedCourse.length !== 0 && searchTerm !== "" && (
           <div className="py-16 
                           bg-stone-50">
             <div className="max-w-7xl 

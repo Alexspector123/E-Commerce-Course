@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 const CustomSwiper = lazy(() => import('../components/CustomSwiper')); // Add lazy loading for swiper
 
 import { FaRegStar } from "react-icons/fa";
@@ -9,16 +9,20 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { FiAward } from "react-icons/fi";
 import { IoPlayOutline } from "react-icons/io5";
 import { MdOutlineFileDownload } from "react-icons/md";
+import { BsCartPlus, BsCartCheckFill } from "react-icons/bs";
 
 import courseData from '../data/CourseData';
 
 import { useViewHistory } from "../hooks/useViewHistory";
+import { useCart } from "../context/CartContext";
 
 const CoursePage = () => {
-
+    const navigate = useNavigate();
     const { id } = useParams();
     const courseId = parseInt(id);
     const course = courseData.find(c => c.id === courseId);
+    const { cartItems, addToCart, removeFromCart } = useCart();
+    const isInCart = cartItems.some(item => item.id === courseId);
 
     const { addToHistory } = useViewHistory();
     useEffect(() => {
@@ -170,11 +174,51 @@ const CoursePage = () => {
                             </div>
 
                             <div className="space-y-3 mb-6">
-                                <button className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-colors">
-                                    Enroll Now
+                                <button 
+                                    onClick={() => navigate('/cart')}
+                                    className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
+                                >
+                                    {isInCart ? (
+                                        <>
+                                            <BsCartCheckFill />
+                                            Go to Cart
+                                        </>
+                                    ) : (
+                                        "Enroll Now"
+                                    )}
                                 </button>
-                                <button className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-4 rounded-lg transition-colors">
-                                    Add to Cart
+                                <button 
+                                    onClick={() => {
+                                        if (isInCart) {
+                                            removeFromCart(courseId);
+                                        } else {
+                                            addToCart({
+                                                id: courseId,
+                                                title: course.title,
+                                                instructor: course.instructor,
+                                                price: course.price,
+                                                duration: course.duration,
+                                                level: course.level
+                                            });
+                                        }
+                                    }}
+                                    className={`w-full font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2
+                                        ${isInCart 
+                                            ? 'bg-red-50 text-red-600 hover:bg-red-100' 
+                                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                        }`}
+                                >
+                                    {isInCart ? (
+                                        <>
+                                            <BsCartCheckFill />
+                                            Remove from Cart
+                                        </>
+                                    ) : (
+                                        <>
+                                            <BsCartPlus />
+                                            Add to Cart
+                                        </>
+                                    )}
                                 </button>
                             </div>
 

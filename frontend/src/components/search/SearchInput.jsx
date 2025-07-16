@@ -53,7 +53,8 @@ const SearchInput = () => {
         if (e.key === 'Enter' && search.trim()) {
             const encoded = encodeURIComponent(search.trim());
             navigate(`/courses/search/?q=${encoded}`);
-            setIsFocused(false); 
+            setIsFocused(false);
+            setShowModal(false)
         }
     };
 
@@ -138,6 +139,7 @@ const SearchInput = () => {
                                 type="text"
                                 value={search}
                                 onChange={handleInputOnchange}
+                                onKeyDown={handleKeyDown}
                                 placeholder="Search..."
                                 className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />

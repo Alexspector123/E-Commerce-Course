@@ -14,7 +14,10 @@ const SearchCourseItem = ({ data }) => {
                       flex gap-2'>
         <div>
           {image ? (
-            <img src={image} alt="Course thumbnail" />
+            <img 
+              src={image} 
+              alt="Course thumbnail"
+              className='w-15 h-15 rounded-md'/>
           ) : null}
         </div>
         <div>

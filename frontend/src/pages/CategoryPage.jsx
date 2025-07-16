@@ -130,7 +130,6 @@ const CategoryPage = () => {
 
   const {
     currentPage,
-    totalPages,
     paginatedData: displayedCourses,
     goToPage,
     resetPage
@@ -214,7 +213,8 @@ const CategoryPage = () => {
                 <div className="flex justify-center">
                   <Pagination
                     currentPage={currentPage}
-                    totalPages={totalPages}
+                    totalCount={sortedCourses.length}
+                    pageSize={pageSize}
                     onPageChange={goToPage}
                   />
                 </div>

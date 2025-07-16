@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { motion } from 'framer-motion';
+
 import { IoMailOutline } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
 import { FaRegCalendar } from "react-icons/fa";
@@ -41,7 +43,7 @@ const ProfilePage = () => {
   }, []);
 
   // History List
-    useEffect(() => {
+  useEffect(() => {
     const getHistoryList = JSON.parse(localStorage.getItem("history")) || [];
     const list = getHistoryList.map(id => {
       return courseData.find(course => course.id === Number(id));
@@ -58,7 +60,16 @@ const ProfilePage = () => {
     <div>
       <div className="mx-auto 
                        px-4 sm:px-10 lg:px-20 py-8">
-        <div className="bg-white 
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+            ease: [0.33, 1, 0.68, 1],
+            type: "tween"
+          }}
+          className="bg-white 
                           rounded-xl shadow-sm border border-gray-300
                           p-6 
                           mb-8">
@@ -134,9 +145,18 @@ const ProfilePage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="rounded-xl shadow-sm border-gray-400 
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+            ease: [0.33, 1, 0.68, 1],
+            type: "tween"
+          }}
+          className="rounded-xl shadow-sm border-gray-400 
                         mb-8">
           <div className="flex 
                           border-b
@@ -214,7 +234,7 @@ const ProfilePage = () => {
                                         cursor-pointer
                                         transition duration-300
                                         text-sm font-medium"
-                          onClick={clearHistory}>
+                    onClick={clearHistory}>
                     Clear History
                   </button>
                 </div>
@@ -242,7 +262,7 @@ const ProfilePage = () => {
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

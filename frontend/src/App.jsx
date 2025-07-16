@@ -8,6 +8,7 @@ import AuthPage from './pages/authpage/AuthPage';
 import CategoryPage from "./pages/CategoryPage";
 import CoursePage from "./pages/CoursePage";
 import ProfilePage from "./pages/ProfilePage";
+import CartPage from "./pages/CartPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import './App.css'
@@ -15,24 +16,23 @@ import './App.css'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-    <Route path='/' element={<RootLayout />}>
-      <Route index element={<HomePage />} />
-      <Route path='auth' element={<AuthPage />}/>
-      <Route path='courses' element={<CourseLayout />}>
-        <Route path="search" element={<CategoryPage />} />
-        <Route path=":id" element={<CoursePage />} />
+      <Route path='/' element={<RootLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path='auth' element={<AuthPage />} />
+        <Route path='courses' element={<CourseLayout />}>
+          <Route path="search" element={<CategoryPage />} />
+          <Route path=":id" element={<CoursePage />} />
+        </Route>
+        <Route path="profile/edit" element={<ProfilePage />} />
+        <Route path="cart" element={<CartPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
-      <Route path="profile/edit" element={<ProfilePage />}/>
-      <Route path="*" element={<NotFoundPage />}/>
-    </Route>
     </>
   )
 )
 
 export default function App() {
   return (
-    <div className='font-sans'>
-      <RouterProvider router={router} />
-    </div>
+    <RouterProvider router={router} />
   )
 }
