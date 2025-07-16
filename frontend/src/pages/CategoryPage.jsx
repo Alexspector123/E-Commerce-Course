@@ -8,8 +8,8 @@ import CourseCard from '../components/course/CourseCard';
 import FilterBox from '../components/filter/FilterBox';
 
 import usePaginatedData from '../hooks/usePaginatedData';
+import { useSuggestion } from '../hooks/useSuggestion';
 
-// Main Component
 const CategoryPage = () => {
   const location = useLocation();
   const [filters, setFilters] = useState({
@@ -43,15 +43,20 @@ const CategoryPage = () => {
     });
   }, [courseData, searchQuery]);
 
+  const { suggestion, loading, error, loadSuggestion } = useSuggestion(1);
+  const [useRecommend, setUseRecommend] = useState(false);
+
+  const baseCourses = useMemo(() => {
+    return useRecommend ? suggestion : searchedCourses;
+  }, [useRecommend, suggestion, searchedCourses]);
+
+  console.log("base", baseCourses);
+  console.log("suggestion", suggestion);
+
   const filteredCourses = useMemo(() => {
-    if (!courseData) return [];
+    if (!baseCourses) return [];
 
-    return courseData.filter(course => {
-      // Search query filter
-      if (searchQuery && !course.title.toLowerCase().includes(searchQuery.toLowerCase())) {
-        return false;
-      }
-
+    return baseCourses.filter(course => {
       // Category filter
       if (filters.category !== 'All Categories' && course.category !== filters.category) {
         return false;
@@ -102,7 +107,7 @@ const CategoryPage = () => {
 
       return true;
     });
-  }, [filters, searchedCourses]);
+  }, [filters, baseCourses]);
 
   // Sort courses
   const sortedCourses = useMemo(() => {
@@ -129,6 +134,11 @@ const CategoryPage = () => {
     goToPage,
     resetPage
   } = usePaginatedData(sortedCourses, pageSize);
+
+  const toggleRecommend = async () => {
+    await loadSuggestion();
+    setUseRecommend(true);
+  };
 
   return (
     <div className="bg-gray-50">
@@ -166,6 +176,17 @@ const CategoryPage = () => {
                     <option>Most Popular</option>
                   </select>
                 </div>
+                <button
+                  onClick={toggleRecommend}
+                  className="
+                    bg-green-500 hover:bg-green-600 
+                    text-white text-base font-medium
+                    px-4 py-3 
+                    rounded-lg 
+                    cursor-pointer
+                    transition">
+                  Recommend
+                </button>
               </div>
 
               {/* Course Grid */}

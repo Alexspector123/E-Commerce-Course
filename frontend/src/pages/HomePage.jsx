@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 const CustomSwiper = lazy(() => import('../components/CustomSwiper')); // Add lazy loading for swiper
 
 import courseData from '../data/CourseData';
@@ -15,7 +16,6 @@ import EmailBox from '../components/EmailBox';
 import { useSearch } from '../context/SearchContext';
 
 const HomePage = () => {
-
   const { searchTerm } = useSearch();
   const relatedCourse = useMemo(() => {
     if (!courseData) return [];
@@ -29,6 +29,8 @@ const HomePage = () => {
 
     return filtered.slice(0, 10);
   }, [courseData, searchTerm]);
+
+  const navigate = useNavigate();
 
   return (
     <div className="bg-stone-100 
@@ -58,11 +60,14 @@ const HomePage = () => {
                 Build real-world skills that matter.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-green-500 hover:bg-green-600
-                                   text-white font-semibold
-                                      px-8 py-3 
-                                      rounded-lg 
-                                      transition duration-400 transform hover:scale-105">
+                <button 
+                  onClick={() => navigate('/courses/search/?q=')}
+                  className="
+                    bg-green-500 hover:bg-green-600
+                      text-white font-semibold
+                      px-8 py-3 
+                      rounded-lg 
+                      transition duration-400 transform hover:scale-105">
                   EXPLORE COURSES
                 </button>
                 <button className="border-2 border-white 

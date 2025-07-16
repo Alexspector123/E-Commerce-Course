@@ -81,7 +81,7 @@ const FilterBox = ({ searchedCourses, filters, resetPage, setFilters }) => {
                     <h2 className="text-xl font-bold text-gray-900">Filters</h2>
                     <button
                         onClick={clearAllFilters}
-                        className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                        className="text-green-500 hover:text-green-600 text-sm font-medium"
                     >
                         Clear All
                     </button>
