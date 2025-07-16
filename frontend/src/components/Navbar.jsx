@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { FiShoppingBag } from "react-icons/fi";
 import { useNavigate } from 'react-router-dom';
 import { RxAvatar } from "react-icons/rx"
+import { FaBars } from "react-icons/fa6";
 
 import Name from './Name';
 
 import SearchInput from './search/SearchInput';
 
-const Navbar = () => {
+const Navbar = ({ showSidebar, sidebar }) => {
     const navigate = useNavigate();
 
     return (
@@ -19,8 +20,18 @@ const Navbar = () => {
                         px-10 py-5
                         flex justify-between
                         '>
-                <div className='flex justify-between w-full md:w-auto md:justify-normal'>
-                    <div className='mr-4'>
+                <div className='flex justify-between items-center md:gap-3 w-full md:w-auto md:justify-normal'>
+                    <div className="flex items-center text-xl md:hidden">
+                        {!sidebar && (
+                            <div>
+                                <FaBars className='transition-all duration-200 cursor-pointer'  onClick={showSidebar} />
+                            </div>
+                        )}
+                        <div className='ml-4'>
+                            <Name />
+                        </div>
+                    </div>
+                    <div className='hidden md:block mr-4'>
                         <Name />
                     </div>
                     <div>
