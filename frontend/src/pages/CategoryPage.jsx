@@ -6,6 +6,7 @@ import courseData from '../data/CourseData';
 import Pagination from '../components/Pagination';
 import CourseCard from '../components/course/CourseCard';
 import FilterBox from '../components/filter/FilterBox';
+import { SuggestionSkeleton } from '../components/skeleton/SuggestionSkeleton';
 
 import usePaginatedData from '../hooks/usePaginatedData';
 import { useSuggestion } from '../hooks/useSuggestion';
@@ -191,9 +192,12 @@ const CategoryPage = () => {
 
               {/* Course Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
-                {displayedCourses.map((course) => (
-                  <CourseCard key={course.id} course={course} />
-                ))}
+                {useRecommend && loading
+                  ? <SuggestionSkeleton count={pageSize} />
+                  : displayedCourses.map(course => (
+                    <CourseCard key={course.id} course={course} />
+                  ))
+                }
               </div>
 
               {/* No Results */}
